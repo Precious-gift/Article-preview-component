@@ -25,10 +25,18 @@ body {
   }
 
   /* For mobile phones: */
+  @media only screen and (max-width: 600px) {
   [class*="col-"] {
     width: 100%;
   }
-
+  #img {
+    border-top-right-radius: 20px;
+    height: 235px;
+  }
+  .container {
+    margin: auto;
+  }
+  }
 
 @media only screen and (min-width: 600px) {
   /* For tablets: */
@@ -44,6 +52,9 @@ body {
   .col-m-10 {width: 83.33%;}
   .col-m-11 {width: 91.66%;}
   .col-m-12 {width: 100%;}
+  #img {
+    height: 228.41px;
+  }
 }
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -79,10 +90,9 @@ body {
 #img {
   background-image: url('images/drawers.jpg');
   background-size: cover;
-  height: 236.42px;
+  height: 251.47px;
   padding: 0px;
   border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 
 }
 #text {
@@ -123,6 +133,7 @@ body {
 #words p {
   color: var(--secondary-color);
   margin: 0;
+  padding: 10px 0px;
 }
 #pic img {
   width: 100%;
@@ -140,10 +151,13 @@ body {
   padding: 20px;
   border-radius: 50%;
 }
-#link img {
+#links img {
   background-color: var(--light-grey);
   padding: 10px;
   border-radius: 50%;
+}
+#links img:hover {
+  background-color: var(--primary-color);
 }
 #paragraph {
   padding: 15px 30px 15px 30px;
@@ -174,6 +188,7 @@ body {
 }
 #twitter {
   padding-top: 10px;
+  background: none;
 }
 #pinterest {
   padding-top: 10px;
@@ -192,17 +207,19 @@ body {
 }
  .tooltiptext {
   visibility: hidden;
-  width: auto;
-  background-color: black;
+  width: 250px;
+  background-color: var(--primary-color);
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 5px 10px ;
   position: absolute;
   z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -60px;
+  bottom: 100%;
+  left: 50%; 
+  margin-left: -140px;
+  display: flex;
+  justify-content: space-between;
 }
 .tooltip .tooltiptext::after {
   content: "";
@@ -212,8 +229,17 @@ body {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: black transparent transparent transparent;
+  border-color: var(--primary-color) transparent transparent transparent;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+.tooltiptext img {
+  background-color: var(--secondary-color);
+}
+.tooltiptext p {
+  letter-spacing: 0.5rem;
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
 }
